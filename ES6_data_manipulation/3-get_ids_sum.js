@@ -22,9 +22,9 @@ function getListStudents() {
   
   function getStudentIdsSum(students, city) {
     if (!Array.isArray(students)) {
-      return [];
+      return 0;
     }
-    return students.reduce(student => student.location === city);
+    return students.reduce((sum,student) => sum + student.id, 0);
     }
 
     // Export the function
