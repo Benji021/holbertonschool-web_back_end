@@ -14,4 +14,4 @@ function getListStudentIds(students) {
   }
 
 // Export the function
-module.exports = getListStudentIds;
+module.exports = { getListStudents, getListStudentIds };
