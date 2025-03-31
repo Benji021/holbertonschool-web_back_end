@@ -20,5 +20,12 @@ function getListStudents() {
     return students.filter(student => student.location === city);
   }
   
+  function getStudentsByLocation(students, city) {
+    if (!Array.isArray(students)) {
+      return [];
+    }
+    return students.reduce(student => student.location === city);
+    }
+    
     // Export the function
 module.exports = { getListStudents, getListStudentIds, getStudentsByLocation };  
