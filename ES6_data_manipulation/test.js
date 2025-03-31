@@ -1,5 +1,6 @@
-const { getListStudents } = require("./1-get_list_student_ids.js");
-const { getListStudentIds } = require("./1-get_list_student_ids.js");
+const { getListStudents } = require("./2-get_students_by_loc.js");
+const { getListStudentIds } = require("./2-get_students_by_loc.js");
+console.log(getStudentsByLocation(getListStudents(), "San Francisco"));
 
 console.log(getListStudents()); // Vérifie la liste des étudiants
 console.log(getListStudentIds(getListStudents())); // Vérifie les IDs
