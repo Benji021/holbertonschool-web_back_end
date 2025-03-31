@@ -2,5 +2,5 @@ const { getListStudents, getListStudentIds, getStudentsByLocation, getStudentIds
 
 console.log(getListStudents()); // Checks the list of students
 console.log(getListStudentIds(getListStudents())); // Checks student IDs
-console.log(getStudentsByLocation(getListStudents(), "San Francisco")); // Checks students in San Francisco
+console.log(getStudentsByLocation(getListStudents())); // Checks students
 console.log(getStudentIdsSum(getListStudents())); // Checks the sum of student IDs
