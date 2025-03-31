@@ -28,4 +28,4 @@ function getListStudents() {
     }
 
     // Export the function
-module.exports = { getListStudents, getListStudentIds, getStudentsByLocation };  
+module.exports = { getListStudents, getListStudentIds, getStudentsByLocation, getStudentIdsSum };  
