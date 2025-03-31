@@ -22,8 +22,9 @@ function getListStudents() {
   
   function getStudentIdsSum(students, city) {
     if (!Array.isArray(students)) {
-      return [];
+      return 0;
     }
+    const filteredStudents = students.filter(student => student.location === city);
     return students.reduce(student => student.location === city);
     }
 
