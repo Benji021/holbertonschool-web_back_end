@@ -1,6 +1,6 @@
-const { getListStudents } = require("./2-get_students_by_loc.js");
-const { getListStudentIds } = require("./2-get_students_by_loc.js");
-const { getStudentsByLocation } = require("./2-get_students_by_loc.js");
+const { getListStudents } = require("./3-get_ids_sum.js");
+const { getListStudentIds } = require("./3-get_ids_sum.js");
+const { getStudentsByLocation } = require("./3-get_ids_sum.js");
 
 console.log(getListStudents()); // Checks the list of students
 console.log(getListStudentIds(getListStudents())); // Checks student IDs
