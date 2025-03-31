@@ -6,4 +6,8 @@ function getListStudents() {
     ];
   }
 
+    // Export the function
+module.exports = getListStudents;
+
   console.log(getListStudents());
+
