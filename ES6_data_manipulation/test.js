@@ -1,4 +1,4 @@
-const { getListStudents, getListStudentIds, getStudentsByLocation, getStudentIdsSum, updateStudentGradeByCity, createInt8TypedArray, setFromArray, hasValueFromArray, cleanSet, groceriesList } = require("./3-get_ids_sum.js");
+const { getListStudents, getListStudentIds, getStudentsByLocation, getStudentIdsSum, updateStudentGradeByCity, createInt8TypedArray, setFromArray, hasValueFromArray, cleanSet, groceriesList, updateUniqueItems } = require("./3-get_ids_sum.js");
 
 console.log(getListStudents()); // Checks the list of students
 console.log(getListStudentIds(getListStudents())); // Checks student IDs
@@ -10,3 +10,4 @@ console.log(setFromArray([1, 2, 3, 4, 5])); // Checks the creation of Set from a
 console.log(hasValueFromArray([1, 2, 3, 4, 5], 3)); // Checks if value is in array
 console.log(cleanSet(getListStudents(), "location")); // Checks the cleaned set
 console.log(groceriesList()); // Checks the groceries list
+console.log(updateUniqueItems(groceriesList())); // Checks the updated unique items
