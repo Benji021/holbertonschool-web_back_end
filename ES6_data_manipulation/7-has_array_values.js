@@ -61,6 +61,10 @@ function setFromArray(arr) {
   }
 
 function hasValuesFromArray(set, array) {
+  if (!array || !Array.isArray(array)) {
+    console.error("The second argument must be an array");
+    return false;
+  }
    return array.every((value) => set.has(value));
 }
 
