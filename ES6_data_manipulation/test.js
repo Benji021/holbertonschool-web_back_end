@@ -1,14 +1,14 @@
 const getListStudents = require("./0-get_list_students.js");
 const { getListStudentIds } = require("./1-get_list_student_ids.js");
 const { getStudentsByLocation } = require("./2-get_students_by_loc.js");
-const getStudentIdsSum = require("./3-get_ids_sum.js");
-const updateStudentGradeByCity = require("./4-update_grade_by_city.js");
-const createInt8TypedArray = require("./5-typed_arrays.js");
-const setFromArray = require("./6-set.js");
-const hasValueFromArray = require("./7-has_array_values.js");
-const cleanSet = require("./8-clean_set.js");
-const groceriesList = require("./9-groceries_list.js");
-const updateUniqueItems = require("./10-update_uniq_items.js");
+const { getStudentIdsSum } = require("./3-get_ids_sum.js");
+const { updateStudentGradeByCity } = require("./4-update_grade_by_city.js");
+const { createInt8TypedArray } = require("./5-typed_arrays.js");
+const { setFromArray } = require("./6-set.js");
+const { hasValueFromArray } = require("./7-has_array_values.js");
+const { cleanSet } = require("./8-clean_set.js");
+const { groceriesList } = require("./9-groceries_list.js");
+const { updateUniqueItems } = require("./10-update_uniq_items.js");
 
 console.log(getListStudents()); // Checks the list of students
 console.log(getListStudentIds(getListStudents())); // Checks student IDs
