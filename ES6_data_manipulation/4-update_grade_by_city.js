@@ -2,7 +2,7 @@ function getListStudents() {
   return [
     { id: 1, firstName: 'Guillaume', location: 'San Francisco' },
     { id: 2, firstName: 'James', location: 'Columbia' },
-    { id: 5, firstName: 'Serena', location: 'San Francisco' },
+    { id: 5, firstName: 'Serena', location: 'San Francisco' }
   ];
 }
 
@@ -40,7 +40,9 @@ function updateStudentGradeByCity(students, city, newGrades) {
       const gradeObj = newGrades.find((grade) => grade.studentId === student.id);
       return {
         ...student,
-        grade: gradeObj ? gradeObj.grade : 'N/A',
+        grade: gradeObj
+          ? gradeObj.grade
+          : 'N/A', // Moved this line to a new line to respect max-len
       };
     });
 }
