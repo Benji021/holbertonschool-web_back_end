@@ -18,7 +18,6 @@ console.log(updateStudentGradeByCity(getListStudents(), "San Francisco", [{ stud
 console.log(createInt8TypedArray(10, 2, 42)); // Checks the creation of Int8TypedArray
 console.log(setFromArray([1, 2, 3, 4, 5])); // Checks the creation of Set from array
 console.log(hasValuesFromArray(new Set([1, 2, 3, 4, 5], [3]))); // Checks if value is in array
-console.log(hasValuesFromArray(new Set([1, 2, 3, 4, 5], '3'))); // Checks if value is not in array
 console.log(cleanSet(getListStudents(), "location")); // Checks the cleaned set
 console.log(groceriesList()); // Checks the groceries list
 console.log(updateUniqueItems(groceriesList())); // Checks the updated unique items
