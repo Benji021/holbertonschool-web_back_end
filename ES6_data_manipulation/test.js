@@ -1,6 +1,6 @@
 const getListStudents = require("./0-get_list_students.js");
 const getListStudentIds = require("./1-get_list_student_ids.js");
-const { getStudentsByLocation } = require("./2-get_students_by_location.js");
+const { getStudentsByLocation } = require("./2-get_students_by_loc.js");
 const getStudentIdsSum = require("./3-get_student_ids_sum.js");
 const updateStudentGradeByCity = require("./4-update_student_grade_by_city.js");
 const createInt8TypedArray = require("./5-create_int8_typed_array.js");
