@@ -62,7 +62,7 @@ function setFromArray(arr) {
 
 function hasValuesFromArray(set, arr) {
   if (!arr || !Array.isArray(arr)) {
-    console.error("Le deuxième argument doit être un tableau");
+    console.error("The second argument must be an array");
     return false;
   }
   return arr.every(element => set.has(element));
