@@ -1,4 +1,4 @@
-const { getListStudents } = require("./0-get_list_students.js");
+const getListStudents = require("./0-get_list_students.js");
 const { getListStudentIds } = require("./0-get_list_students.js");
 const { getStudentsByLocation } = require("./1-get_list_student_ids.js");
 const { getStudentIdsSum } = require("./2-get_students_by_location.js");

@@ -6,4 +6,4 @@ function getListStudents() {
     ];
   }
 
-  module.exports = getListStudents;
+module.exports = getListStudents;
