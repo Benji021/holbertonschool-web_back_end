@@ -10,14 +10,74 @@ const { cleanSet } = require("./8-clean_set.js");
 const { groceriesList } = require("./9-groceries_list.js");
 const { updateUniqueItems } = require("./10-update_uniq_items.js");
 
-console.log(getListStudents()); // Checks the list of students
-console.log(getListStudentIds(getListStudents())); // Checks student IDs
-console.log(getStudentsByLocation(getListStudents())); // Checks students
-console.log(getStudentIdsSum(getListStudents())); // Checks the sum of student IDs
-console.log(updateStudentGradeByCity(getListStudents(), "San Francisco", [{ studentId: 1, grade: 90 }, { studentId: 2, grade: 85 }])); // Checks the updated grades 
-console.log(createInt8TypedArray(10, 2, 42)); // Checks the creation of Int8TypedArray
-console.log(setFromArray([1, 2, 3, 4, 5])); // Checks the creation of Set from array
-console.log(hasValuesFromArray(new Set([1, 2, 3, 4, 5], [3]))); // Checks if value is in array
-console.log(cleanSet(getListStudents(), "location")); // Checks the cleaned set
-console.log(groceriesList()); // Checks the groceries list
-console.log(updateUniqueItems(groceriesList())); // Checks the updated unique items
+test("getListStudents returns a list of students", () => {
+  expect(getListStudents()).toEqual([
+    { id: 1, firstName: "Guillaume", location: "San Francisco" },
+    { id: 2, firstName: "James", location: "Columbia" },
+    { id: 5, firstName: "Serena", location: "San Francisco" },
+  ]);
+});
+
+test("getListStudentIds returns an array of student IDs", () => {
+  expect(getListStudentIds(getListStudents())).toEqual([1, 2, 5]);
+});
+
+test("getStudentsByLocation filters students by location", () => {
+  expect(getStudentsByLocation(getListStudents(), "San Francisco")).toEqual([
+    { id: 1, firstName: "Guillaume", location: "San Francisco" },
+    { id: 5, firstName: "Serena", location: "San Francisco" },
+  ]);
+});
+
+test("getStudentIdsSum returns the sum of student IDs", () => {
+  expect(getStudentIdsSum(getListStudents())).toBe(8);
+});
+
+test("updateStudentGradeByCity updates student grades", () => {
+  expect(
+    updateStudentGradeByCity(getListStudents(), "San Francisco", [
+      { studentId: 1, grade: 90 },
+      { studentId: 2, grade: 85 },
+    ])
+  ).toEqual([
+    { id: 1, firstName: "Guillaume", location: "San Francisco", grade: 90 },
+    { id: 5, firstName: "Serena", location: "San Francisco", grade: "N/A" },
+  ]);
+});
+
+test("createInt8TypedArray creates an Int8 Typed Array", () => {
+  expect(createInt8TypedArray(10, 2, 42).buffer.byteLength).toBe(10);
+});
+
+test("setFromArray creates a Set from an array", () => {
+  expect(setFromArray([1, 2, 3, 4, 5])).toEqual(new Set([1, 2, 3, 4, 5]));
+});
+
+test("hasValuesFromArray checks if values exist in the Set", () => {
+  expect(hasValuesFromArray(new Set([1, 2, 3, 4, 5]), [3])).toBe(true);
+  expect(hasValuesFromArray(new Set([1, 2, 3, 4, 5]), [6])).toBe(false);
+});
+
+test("cleanSet filters and joins elements from a set", () => {
+  expect(cleanSet(new Set(["apple", "banana", "apricot"]), "ap")).toBe("ple,ricot");
+});
+
+test("groceriesList returns a Map with grocery items", () => {
+  expect(groceriesList()).toEqual(
+    new Map([
+      ["Apples", 10],
+      ["Tomatoes", 10],
+      ["Pasta", 1],
+      ["Rice", 1],
+      ["Banana", 5],
+    ])
+  );
+});
+
+test("updateUniqueItems updates only items with quantity 1", () => {
+  const groceries = groceriesList();
+  updateUniqueItems(groceries);
+  expect(groceries.get("Pasta")).toBe(100);
+  expect(groceries.get("Rice")).toBe(100);
+  expect(groceries.get("Apples")).toBe(10);
+});
