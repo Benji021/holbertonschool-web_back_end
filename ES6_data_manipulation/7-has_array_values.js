@@ -61,7 +61,12 @@ function setFromArray(arr) {
   }
 
 function hasValuesFromArray(set, arr) {
-    return arr.every(element => set.has(element));
+  if (!arr || !Array.isArray(arr)) {
+    console.error("Le deuxième argument doit être un tableau");
+    return false;
   }
+  return arr.every(element => set.has(element));
+}
+
   // Example usage:
   module.exports = { getListStudents, getListStudentIds, getStudentsByLocation, getStudentIdsSum, updateStudentGradeByCity, createInt8TypedArray, setFromArray, hasValuesFromArray };
