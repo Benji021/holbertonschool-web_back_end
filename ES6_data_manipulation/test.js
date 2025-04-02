@@ -1,4 +1,4 @@
-const { getListStudents, getListStudentIds, getStudentsByLocation, getStudentIdsSum, updateStudentGradeByCity, createInt8TypedArray, setFromArray, hasValueFromArray, cleanSet, groceriesList, updateUniqueItems } = require("./3-get_ids_sum.js");
+const { getListStudents, getListStudentIds, getStudentsByLocation, getStudentIdsSum, updateStudentGradeByCity, createInt8TypedArray, setFromArray, hasValueFromArray, cleanSet, groceriesList, updateUniqueItems } = require("./0-get_list_students.js");
 
 console.log(getListStudents()); // Checks the list of students
 console.log(getListStudentIds(getListStudents())); // Checks student IDs
