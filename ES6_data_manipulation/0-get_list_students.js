@@ -5,6 +5,3 @@ function getListStudents() {
       { id: 5, firstName: "Serena", location: "San Francisco" }
     ];
   }
-
-    // Export the function
-module.exports = getListStudents;
