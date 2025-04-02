@@ -5,5 +5,5 @@ function getListStudents() {
       { id: 5, firstName: "Serena", location: "San Francisco" }
     ];
   }
-
-module.exports = { getListStudents };
+// Export the function
+module.exports = getListStudents;
