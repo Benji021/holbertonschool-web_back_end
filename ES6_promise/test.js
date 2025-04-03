@@ -4,11 +4,8 @@ test('getResponseFromAPI renvoie "Success"', async () => {
     await expect(getResponseFromAPI()).resolves.toBe('Success');
 });
 
-// Tests 1-promise.js
-getFullResponseFromAPI(true)
-    .then(response => console.log(response))  // { status: 200, body: 'Success' }
-    .catch(error => console.error(error.message));
+import { getFullResponseFromAPI } from './1-promise'; // Si c'est dans un autre fichier
 
-getFullResponseFromAPI(false)
-    .then(response => console.log(response))
-    .catch(error => console.error(error.message)); // "The fake API is not working currently"
+test('getFullResponseFromAPI renvoie un objet avec statut et corps', async () => {
+    await expect(getFullResponseFromAPI()).resolves.toEqual({ status: 200, body: 'Success' });
+});
