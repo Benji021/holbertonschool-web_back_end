@@ -48,7 +48,7 @@ function updateStudentGradeByCity(students, city, newGrades) {
 }
 
 // Example usage:
-module.exports = { 
+module.exports = {
   getListStudents,
   getListStudentIds,
   getStudentsByLocation,
