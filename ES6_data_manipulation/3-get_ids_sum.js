@@ -20,7 +20,7 @@ function getStudentsByLocation(students, city) {
   return students.filter((student) => student.location === city);
 }
 
-function getStudentIdsSum(students, city) {
+export default function getStudentIdsSum(students, city) {
   if (!Array.isArray(students)) {
     return 0;
   }
@@ -36,11 +36,3 @@ function getStudentIdsSum(students, city) {
     0,
   );
 }
-
-// Export des fonctions
-module.exports = {
-  getListStudents,
-  getListStudentIds,
-  getStudentsByLocation,
-  getStudentIdsSum,
-};
