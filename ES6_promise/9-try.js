@@ -9,7 +9,7 @@ export default function guardrail(mathFunction) {
     // In the event of an error, add the error message to the queue
     queue.push(error.message);
   } finally {
-// Regardless of whether an error occurred, add the message 'Guardrail was processed' to the queue
+// Add the message 'Guardrail was processed' to the queue
     queue.push('Guardrail was processed');
   }
 
