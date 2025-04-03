@@ -1,2 +1,1 @@
-const response = getResponseFromAPI();
-console.log(response instanceof Promise);
+import getResponseFromAPI from './0-promise';
