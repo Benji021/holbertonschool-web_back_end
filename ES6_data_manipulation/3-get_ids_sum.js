@@ -33,14 +33,14 @@ function getStudentIdsSum(students, city) {
   // Ajouter les IDs des étudiants
   return filteredStudents.reduce(
     (sum, student) => sum + student.id,
-    0
+    0,
   );
 }
 
 // Export des fonctions
-module.exports = { 
-  getListStudents, 
-  getListStudentIds, 
-  getStudentsByLocation, 
-  getStudentIdsSum, 
+module.exports = {
+  getListStudents,
+  getListStudentIds,
+  getStudentsByLocation,
+  getStudentIdsSum,
 };
