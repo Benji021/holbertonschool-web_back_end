@@ -24,10 +24,11 @@ function getStudentIdsSum(students, city) {
   if (!Array.isArray(students)) {
     return 0;
   }
+  let filteredStudents = students;
   if (city) {
-    students = students.filter((student) => student.location === city);
+    filteredStudents = students.filter((student) => student.location === city);
   }
-  return students.reduce((sum, student) => sum + student.id, 0);
+  return filteredStudents.reduce((sum, student) => sum + student.id, 0);
 }
 
 function updateStudentGradeByCity(students, city, newGrades) {
