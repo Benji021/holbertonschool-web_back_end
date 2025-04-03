@@ -1,5 +1,4 @@
 export default function getResponseFromAPI() {
-  return new Promise((resolve) => {
-    resolve('success');
-  });
-}
+    // eslint-disable-next-line no-unused-vars
+    return new Promise((resolve) => {});
+  }
