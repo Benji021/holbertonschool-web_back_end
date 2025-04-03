@@ -2,7 +2,7 @@ function getListStudents() {
   return [
     { id: 1, firstName: 'Guillaume', location: 'San Francisco' },
     { id: 2, firstName: 'James', location: 'Columbia' },
-    { id: 5, firstName: 'Serena', location: 'San Francisco' }
+    { id: 5, firstName: 'Serena', location: 'San Francisco' },
   ];
 }
 
@@ -25,11 +25,12 @@ function getStudentIdsSum(students, city) {
     return 0;
   }
   // Filter students by location if city is provided
+  let filteredStudents = students;
   if (city) {
-    students = students.filter((student) => student.location === city);
+    filteredStudents = students.filter((student) => student.location === city);
   }
   // Add the IDs of the students
-  return students.reduce((sum, student) => sum + student.id, 0);
+  return filteredStudents.reduce((sum, student) => sum + student.id, 0);
 }
 
 function updateStudentGradeByCity(students, city, newGrades) {
