@@ -1,9 +1,11 @@
-export default function getFullResponseFromAPI(success) {
-  return new Promise((resolve, reject) => {
-    if (success) {
-      resolve({ status: 200, body: 'Success' });
-    } else {
-      reject(new Error('The fake API is not working currently'));
-    }
-  });
-}
+export default function handleResponseFromAPI(promise) {
+    return promise
+      .then((response) => {
+        console.log('Got a response from the API');
+        return { status: 200, body: 'success' };
+      })
+      .catch(() => {
+        console.log('Got a response from the API');
+        return new Error();
+      });
+  }
