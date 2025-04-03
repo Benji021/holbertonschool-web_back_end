@@ -1,1 +1,2 @@
-const getResponseFromAPI = require('./0-promise');
+const response = getResponseFromAPI();
+console.log(response instanceof Promise);
