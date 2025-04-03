@@ -62,7 +62,7 @@ function setFromArray(arr) {
 }
 
 // Export des fonctions
-module.exports = { 
+module.exports = {
   getListStudents,
   getListStudentIds,
   getStudentsByLocation,
