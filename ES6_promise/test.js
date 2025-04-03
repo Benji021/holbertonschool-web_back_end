@@ -1,6 +1,5 @@
-// 0-promise.js
-export default function getResponseFromAPI() {
-    return new Promise((resolve, reject) => {
-        resolve('Success');
-    });
-}
+import getResponseFromAPI from './0-promise';
+
+test('getResponseFromAPI renvoie "Success"', async () => {
+    await expect(getResponseFromAPI()).resolves.toBe('Success');
+});
