@@ -24,12 +24,13 @@ function getStudentIdsSum(students, city) {
   if (!Array.isArray(students)) {
     return 0;
   }
-  // Filter students by location if city is provided
-  if (city) {
-    students = students.filter((student) => student.location === city);
-  }
-  // Add the IDs of the students
-  return students.reduce((sum, student) => sum + student.id, 0);
+  // Création d'une variable locale pour éviter la modification du paramètre
+  const filteredStudents = city
+    ? students.filter((student) => student.location === city)
+    : students;
+
+  // Additionner les IDs des étudiants
+  return filteredStudents.reduce((sum, student) => sum + student.id, 0);
 }
 
 function updateStudentGradeByCity(students, city, newGrades) {
@@ -60,7 +61,7 @@ function setFromArray(arr) {
   return new Set(arr);
 }
 
-// Example usage:
+// Export des fonctions
 module.exports = { 
   getListStudents, 
   getListStudentIds, 
@@ -68,5 +69,5 @@ module.exports = {
   getStudentIdsSum, 
   updateStudentGradeByCity, 
   createInt8TypedArray, 
-  setFromArray 
+  setFromArray, 
 };
