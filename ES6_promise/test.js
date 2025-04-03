@@ -1,1 +1,1 @@
-import getResponseFromAPI from './0-promise';
+const getResponseFromAPI = require('./0-promise');
