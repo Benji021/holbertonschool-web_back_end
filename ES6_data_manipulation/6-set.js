@@ -63,11 +63,11 @@ function setFromArray(arr) {
 
 // Export des fonctions
 module.exports = { 
-  getListStudents, 
-  getListStudentIds, 
-  getStudentsByLocation, 
-  getStudentIdsSum, 
-  updateStudentGradeByCity, 
-  createInt8TypedArray, 
-  setFromArray, 
+  getListStudents,
+  getListStudentIds,
+  getStudentsByLocation,
+  getStudentIdsSum,
+  updateStudentGradeByCity,
+  createInt8TypedArray,
+  setFromArray,
 };
