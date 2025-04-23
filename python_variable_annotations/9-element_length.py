@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+"""Module that takes a list of strings as argument and returns a list
+of tuples where each tuple contains a string and its length in int form"""
+
+
 from typing import List, Tuple
 
 
