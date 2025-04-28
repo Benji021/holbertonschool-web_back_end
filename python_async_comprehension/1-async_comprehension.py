@@ -5,10 +5,7 @@
 
 
 import asyncio
-from importlib import import_module
-
-
-async_generator = import_module('0-async_generator').async_generator
+from 0-async_generator import async_generator
 
 
 async def async_comprehension():
