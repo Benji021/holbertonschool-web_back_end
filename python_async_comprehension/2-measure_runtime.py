@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Async generator that yields random numbers between 0 and 10 every second
-    10 times.
-    """
+"""
+Measure Runtime module
+"""
 
 
 import asyncio
@@ -12,16 +12,24 @@ async_comprehension = __import__('1-async_comprehension').async_comprehension
 
 
 async def measure_runtime() -> float:
-    """Measure the total runtime of running async_comprehension four times in parallel."""
-    start_time = time.time()
-    
-    # Run async_comprehension four times in parallel
+    """
+    Executes async_comprehension four times in parallel using asyncio.gather,
+    measures the total runtime and returns it.
+
+    The runtime is roughly 10 seconds because although we're running
+    4 async_comprehension coroutines in parallel, each one still
+    needs to wait for the async_generator to yield 10 values with
+    a 1-second delay between each, resulting in a ~10 second total.
+
+    Returns:
+        float: total runtime in seconds
+    """
+    start_time = time.perf_counter()
     await asyncio.gather(
         async_comprehension(),
         async_comprehension(),
         async_comprehension(),
         async_comprehension()
     )
-    
-    end_time = time.time()
+    end_time = time.perf_counter()
     return end_time - start_time
