@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""Async generator that yields random numbers between 0 and 10 every second
+    10 times.
+    """
 
 
 import asyncio
