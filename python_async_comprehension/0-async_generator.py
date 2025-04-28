@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-"""Async generator that yields a random number every second."""
 
 
 import asyncio
