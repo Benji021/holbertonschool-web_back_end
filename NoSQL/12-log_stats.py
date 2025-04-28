@@ -4,7 +4,7 @@ Module for providing stats about Nginx logs stored in MongoDB
 """
 
 
-from pymongo import MongoClient#!/usr/bin/env python3
+from pymongo import MongoClient
 
 
 def log_stats():
