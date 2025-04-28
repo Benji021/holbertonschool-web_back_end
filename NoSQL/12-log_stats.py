@@ -3,7 +3,8 @@
 Module for providing stats about Nginx logs stored in MongoDB
 """
 
-from pymongo import MongoClient
+
+from pymongo import MongoClient#!/usr/bin/env python3
 
 
 def log_stats():
@@ -29,9 +30,18 @@ def log_stats():
         count = logs_collection.count_documents({"method": method})
         print(f"\tmethod {method}: {count}")
     
+    # Debugging: Find all status check logs first
+    status_logs = logs_collection.find({"method": "GET", "path": "/status"})
+    for log in status_logs:
+        print(log)
+    
     # Count status checks (method GET and path /status)
     status_checks = logs_collection.count_documents({
         "method": "GET",
         "path": "/status"
     })
     print(f"{status_checks} status check")
+
+
+if __name__ == "__main__":
+    log_stats()
