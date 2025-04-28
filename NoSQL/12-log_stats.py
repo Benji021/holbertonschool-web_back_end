@@ -35,7 +35,3 @@ def log_stats():
         "path": "/status"
     })
     print(f"{status_checks} status check")
-
-
-if __name__ == "__main__":
-    log_stats()
