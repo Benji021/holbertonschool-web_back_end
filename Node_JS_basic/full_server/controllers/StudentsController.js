@@ -2,9 +2,12 @@ import { readDatabase } from '../utils.js';
 
 class StudentsController {
   static async getAllStudents(req, res) {
+    const dbFile = process.argv[2];
     try {
-      const students = await readDatabase('/path/to/database.csv');
-      const sortedFields = Object.keys(students).sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
+      const students = await readDatabase(dbFile);
+      const sortedFields = Object.keys(students).sort((a, b) =>
+        a.localeCompare(b, undefined, { sensitivity: 'base' })
+      );
       let output = 'This is the list of our students\n';
 
       sortedFields.forEach((field) => {
@@ -19,13 +22,14 @@ class StudentsController {
   }
 
   static async getAllStudentsByMajor(req, res) {
-    const { major } = req.params;
+    const major = req.params.major;
     if (!['CS', 'SWE'].includes(major)) {
       return res.status(500).send('Major parameter must be CS or SWE');
     }
 
+    const dbFile = process.argv[2];
     try {
-      const students = await readDatabase('/path/to/database.csv');
+      const students = await readDatabase(dbFile);
       const list = students[major] || [];
       res.status(200).send(`List: ${list.join(', ')}`);
     } catch (err) {
