@@ -11,6 +11,7 @@ console.log('Welcome to Holberton School, what is your name?');
 
 rl.on('line', (input) => {
   console.log(`Your name is: ${input}`);
+  // You can close the input after the first entry, or wait longer.
   rl.close();
 });
 
