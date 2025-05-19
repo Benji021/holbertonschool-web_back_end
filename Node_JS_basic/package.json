@@ -10,3 +10,7 @@
   "author": "",
   "license": "ISC"
 }
+
+"scripts": {
+    "full-test": "echo \"Test complet\""
+}
